@@ -1,0 +1,15 @@
+app = "ci"
+
+[env]
+DRONE_SERVER_HOST = "ci.tail9b256.ts.net"
+DRONE_SERVER_PROTO = "https"
+DRONE_LOGS_DEBUG = "true"
+DRONE_LOGS_TRACE = "true"
+
+
+[deploy]
+strategy = "immediate"
+
+[mounts]
+source="drone_vol"
+destination="/data"
