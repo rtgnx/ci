@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  runner:
+    image: drone/drone-runner-docker:latest
+    container_name: drone-runner
+    network: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      DRONE_RPC_PROTO: https
+      DRONE_RPC_HOST: ci.tail9b256.ts.net
+      DRONE_RPC_SECRET: ""
+      DRONE_RUNNER_NAME: ""
+      DRONE_LOGS_DEBUG: true
+      DRONE_LOGS_TRACE: true
+    restart: always
